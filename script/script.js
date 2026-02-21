@@ -271,6 +271,114 @@ mainContainer.addEventListener('click', function (event) {
 
     }
 
+
+    // if (event.target.classList.contains('btn-delete')) {
+    //     const cardNode = event.target.parentNode.parentNode;
+    //     const plantName = cardNode.querySelector('.plantName').innerText;
+
+    //     // ১. DOM থেকে কার্ডটি সরিয়ে ফেলা
+    //     cardNode.remove();
+
+    //     // ২. ডাটা লিস্ট (Array) থেকে রিমুভ করা
+    //     thrivingList = thrivingList.filter(item => item.plantName !== plantName);
+    //     strugglingList = strugglingList.filter(item => item.plantName !== plantName);
+
+    //     // ৩. কাউন্টার আপডেট করা
+    //     calculateCount();
+        
+    //     // ৪. যদি ফিল্টার ভিউতে থাকে, তবে রেন্ডার ফাংশন কল করা যাতে লিস্ট আপডেট হয়
+    //     if (currentStatus === 'thriving-filter-btn') {
+    //         renderThriving();
+    //     } else if (currentStatus === 'struggling-filter-btn') {
+    //         renderStruggling();
+    //     }
+    // }
+
+
+//     if (event.target.classList.contains('btn-delete')) {
+//     // ডিলিট করার আগে একটি মেসেজ দেখানো
+//     alert("This plant has been deleted successfully!");
+
+//     const cardNode = event.target.parentNode.parentNode;
+//     const plantName = cardNode.querySelector('.plantName').innerText;
+
+//     // ১. স্ক্রিন থেকে কার্ডটি সরিয়ে ফেলা
+//     cardNode.remove();
+
+//     // ২. ডাটা লিস্ট থেকে মুছে ফেলা
+//     thrivingList = thrivingList.filter(item => item.plantName !== plantName);
+//     strugglingList = strugglingList.filter(item => item.plantName !== plantName);
+
+//     // ৩. উপরের সংখ্যাগুলো আপডেট করা
+//     calculateCount();
+    
+//     // ৪. ফিল্টার ভিউ ঠিক রাখা
+//     if (currentStatus === 'thriving-filter-btn') {
+//         renderThriving();
+//     } else if (currentStatus === 'struggling-filter-btn') {
+//         renderStruggling();
+//     }
+// }
+
+
+// if (event.target.classList.contains('btn-delete')) {
+//     const cardNode = event.target.parentNode.parentNode;
+//     const plantName = cardNode.querySelector('.plantName').innerText;
+    
+//     // কার্ডের বর্তমান স্ট্যাটাস (Thrive, Struggle অথবা Not applicable) খুঁজে বের করা
+//     const currentPlantStatus = cardNode.querySelector('.status').innerText;
+
+//     // স্ট্যাটাস অনুযায়ী ডাইনামিক অ্যালার্ট মেসেজ
+//     alert(`This ${currentPlantStatus} plant has been deleted successfully!`);
+
+//     // ১. DOM থেকে কার্ডটি রিমুভ করা
+//     cardNode.remove();
+
+//     // ২. ডাটা লিস্ট থেকে মুছে ফেলা
+//     thrivingList = thrivingList.filter(item => item.plantName !== plantName);
+//     strugglingList = strugglingList.filter(item => item.plantName !== plantName);
+
+//     // ৩. কাউন্টার আপডেট করা
+//     calculateCount();
+    
+//     // ৪. ফিল্টার ভিউ আপডেট করা
+//     if (currentStatus === 'thriving-filter-btn') {
+//         renderThriving();
+//     } else if (currentStatus === 'struggling-filter-btn') {
+//         renderStruggling();
+//     }
+// }
+
+
+ if (event.target.classList.contains('btn-delete')) {
+     const cardNode = event.target.parentNode.parentNode;
+     const plantName = cardNode.querySelector('.plantName').innerText;
+    
+     // কার্ডের বর্তমান স্ট্যাটাস (Thrive বা Struggle) সংগ্রহ করা
+     const currentPlantStatus = cardNode.querySelector('.status').innerText;
+
+     // আপনার চাহিদা অনুযায়ী ডাইনামিক অ্যালার্ট মেসেজ
+     // মেসেজটি হবে: Are you sure you delete Thrive button? (অথবা Struggle button)
+    alert(`Are you sure you delete ${currentPlantStatus} button?`);
+
+     // ১. DOM (HTML) থেকে কার্ডটি রিমুভ করা
+     cardNode.remove();
+
+     // ২. ডাটা লিস্ট (Arrays) থেকে মুছে ফেলা
+    thrivingList = thrivingList.filter(item => item.plantName !== plantName);
+     strugglingList = strugglingList.filter(item => item.plantName !== plantName);
+    // ৩. কাউন্টার (Total, Thrive, Struggle) আপডেট করা
+     calculateCount();
+    
+     // ৪. ফিল্টার ভিউ রি-রেন্ডার করা
+     if (currentStatus === 'thriving-filter-btn') {
+        renderThriving();
+    } else if (currentStatus === 'struggling-filter-btn') {
+       renderStruggling();
+    }
+ }
+
+
 })
 
 // step 3  html file create
